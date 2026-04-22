@@ -6,7 +6,8 @@ Graph-theoretic complexity scoring on protein contact networks
 
 Protein folding rate varies by orders of magnitude across single-domain proteins.
 Wang & Panagiotou (2022) show that folding rate correlates with the global topological complexity of the native state, as measured by the second Vassiliev measure $v_2$.
-This repo investigates whether graph-theoretic descriptors on protein contact networks (PCNs) can approximate or complement $v_2$ as a predictor of folding rate at a fraction of the computational cost.
+This repo investigates whether graph-theoretic descriptors on protein contact networks (PCNs) 
+capture similar structural information as $v_2$ and how strongly they correlate with experimental folding rates.
 
 ## Approach
 
