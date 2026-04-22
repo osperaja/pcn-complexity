@@ -15,8 +15,28 @@ capture similar structural information as $v_2$ and how strongly they correlate 
 2. Construct a contact graph $G = (V, E, W)$ with threshold-based edges and Gaussian distance weights
 3. Compute spectral and topological complexity scores: Fiedler value, spectral gap, clustering coefficient, weighted contact order
 4. Design a composite complexity score $\mathcal{C}(G)$ 
-5. Benchmark against the $v_2$ baseline on the two-state / multi-state dataset from Wang & Panagiotou (2022)
+5. Correlate $\mathcal{C}(G)$ against experimental $\ln(k_f)$ and benchmark against the $v_2$ baseline from Wang & Panagiotou (2022)
 
-## Reference
+## Dataset
 
-Wang, J. & Panagiotou, E. (2022). *The protein folding rate and the geometry and topology of the native state.* Scientific Reports, 12, 6384. https://doi.org/10.1038/s41598-022-09924-0
+Ground truth folding rates are drawn from two published curated datasets:
+
+- **Maxwell et al. (2005)** — a standardized kinetic dataset of two-state single-domain proteins
+- **Broom et al. (2015)** — extends coverage to multi-state proteins
+
+These are the same datasets used in Wang & Panagiotou (2022), allowing direct comparison against their reported correlations.
+
+PDB structures are fetched programmatically via BioPython's `PDBList` using the PDB IDs from the above datasets.
+Experimental $\ln(k_f)$ values are stored locally in `data/folding_rates.csv`.
+
+### `data/folding_rates.csv` format
+
+```csv
+pdb_id,ln_kf,kinetics
+1VII,4.10,two-state
+1l8w,0.80,two-state
+1qop,1.20,multi-state
+...
+```
+
+The `kinetics` column distinguishes two-state from multi-state proteins, as the paper reports meaningfully different correlations for each subset.
