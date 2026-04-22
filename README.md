@@ -14,7 +14,8 @@ capture similar structural information as $v_2$ and how strongly they correlate 
 1. Parse alpha carbon backbone from PDB structures
 2. Construct a contact graph $G = (V, E, W)$ with threshold-based edges and Gaussian distance weights
 3. Compute spectral and topological complexity scores: Fiedler value, spectral gap, clustering coefficient, weighted contact order
-4. Benchmark against the $v_2$ baseline on the two-state / multi-state dataset from Wang & Panagiotou (2022)
+4. Design a composite complexity score $\mathcal{C}(G)$ 
+5. Benchmark against the $v_2$ baseline on the two-state / multi-state dataset from Wang & Panagiotou (2022)
 
 ## Reference
 
